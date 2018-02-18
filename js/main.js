@@ -113,18 +113,18 @@ function draw() {
 
 
 function create2DArray(lenI, lenJ) {
-    let x = new Array(lenI);
+    let y = new Array(lenI);
 
     if (lenJ) {
         for (let i = 0; i < lenI; i++) {
-            x[i] = new Array(lenJ);
+            y[i] = new Array(lenJ);
         }
     } else {
         for (let i = 0; i < lenI; i++) {
-            x[i] = new Array(lenI);
+            y[i] = new Array(lenI);
         }
     }
-    return x;
+    return y;
 }
 
 
@@ -142,14 +142,21 @@ function randchoice(arr, offset = 0) {
     return arr[randint(offset, arr.length - 1 - offset)];
 }
 
-/*
-Displays text with a given position, align and the size
-*** t - {String} - The text
-*** x, y - {Number} - X and y coordinates
-*** c - {String} - Colour of the text
-*** align - {String} - It aligns the text to center, left etc.
-*** size - {Number} - Size of the text
-*/
+/**
+ * Displays text with a given position, align and the size
+ *** t - {String} - The text
+ *** x, y - {Number} - X and y coordinates
+ *** c - {String} - Colour of the text
+ *** align - {String} - It aligns the text to center, left etc.
+ *** size - {Number} - Size of the text
+ * @param  {[type]} t         [description]
+ * @param  {[type]} x         [description]
+ * @param  {[type]} y         [description]
+ * @param  {[type]} c         [description]
+ * @param  {[type]} align     [description]
+ * @param  {Number} [size=25] [description]
+ * @return {[type]}           [description]
+ */
 function text(t, x, y, c, align, size = 25) {
     if (align) ctx.textAlign = align;
     ctx.font = "bold " +size+"px Arial";
